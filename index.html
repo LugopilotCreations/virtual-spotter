@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,6 +30,14 @@
       max-height: 300px;
       overflow-y: auto;
     }
+    img.clickable {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    img.clickable:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
   </style>
 </head>
 <body class="bg-[var(--azul-oscuro)] text-white font-sans">
@@ -39,7 +47,7 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <!-- Logo editable -->
       <div>
-        <img id="logo" src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="h-12 w-auto cursor-pointer" title="Haz clic para cambiar logo" />
+        <img id="logo" src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="h-12 w-auto clickable" title="Haz clic para cambiar imagen" />
       </div>
 
       <!-- Menús dinámicos -->
@@ -56,14 +64,20 @@
             aria-label="Aviación Real"
           >
             <ul id="menu-real" class="space-y-2">
-              <!-- Ejemplo item -->
+              <!-- Ejemplos: repite hasta 50 -->
               <li>
                 <a href="https://i.imgur.com/GosDqjW.jpg" target="_blank" class="flex items-center space-x-3 hover:text-[var(--amarillo)]">
-                  <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión real" class="w-12 h-8 object-cover rounded" />
+                  <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión real" class="w-12 h-8 object-cover rounded clickable" />
                   <span>Avión real en pista</span>
                 </a>
               </li>
-              <!-- Agrega hasta 50 items aquí -->
+              <li>
+                <a href="https://i.imgur.com/GosDqjW.jpg" target="_blank" class="flex items-center space-x-3 hover:text-[var(--amarillo)]">
+                  <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión en hangares" class="w-12 h-8 object-cover rounded clickable" />
+                  <span>Avión en hangares</span>
+                </a>
+              </li>
+              <!-- Más items aquí -->
             </ul>
           </div>
         </div>
@@ -81,11 +95,17 @@
             <ul id="menu-simuladores" class="space-y-2">
               <li>
                 <a href="https://i.imgur.com/XUvqYmU.jpg" target="_blank" class="flex items-center space-x-3 hover:text-[var(--amarillo)]">
-                  <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Simulador" class="w-12 h-8 object-cover rounded" />
+                  <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Simulador" class="w-12 h-8 object-cover rounded clickable" />
                   <span>Simulador de vuelo</span>
                 </a>
               </li>
-              <!-- Agrega hasta 50 items aquí -->
+              <li>
+                <a href="https://i.imgur.com/XUvqYmU.jpg" target="_blank" class="flex items-center space-x-3 hover:text-[var(--amarillo)]">
+                  <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Cabina simulador" class="w-12 h-8 object-cover rounded clickable" />
+                  <span>Cabina simulador</span>
+                </a>
+              </li>
+              <!-- Más items aquí -->
             </ul>
           </div>
         </div>
@@ -103,11 +123,17 @@
             <ul id="menu-comunidad" class="space-y-2">
               <li>
                 <a href="https://i.imgur.com/wghVdlj.jpg" target="_blank" class="flex items-center space-x-3 hover:text-[var(--amarillo)]">
-                  <img src="https://i.imgur.com/wghVdlj.jpg" alt="Captura virtual" class="w-12 h-8 object-cover rounded" />
+                  <img src="https://i.imgur.com/wghVdlj.jpg" alt="Captura virtual" class="w-12 h-8 object-cover rounded clickable" />
                   <span>Captura virtual</span>
                 </a>
               </li>
-              <!-- Agrega hasta 50 items aquí -->
+              <li>
+                <a href="https://i.imgur.com/wghVdlj.jpg" target="_blank" class="flex items-center space-x-3 hover:text-[var(--amarillo)]">
+                  <img src="https://i.imgur.com/wghVdlj.jpg" alt="Evento comunidad" class="w-12 h-8 object-cover rounded clickable" />
+                  <span>Evento comunidad</span>
+                </a>
+              </li>
+              <!-- Más items aquí -->
             </ul>
           </div>
         </div>
@@ -122,7 +148,7 @@
     style="background-image: url('https://i.imgur.com/qZ9HljW.jpg');"
   >
     <!-- Logo en esquina superior izquierda -->
-    <img src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="absolute top-4 left-4 h-16 w-auto" />
+    <img src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="absolute top-4 left-4 h-16 w-auto clickable" title="Haz clic para cambiar imagen" />
 
     <div class="bg-black bg-opacity-60 p-6 rounded text-center max-w-4xl">
       <h2 class="text-3xl font-bold mb-2 text-[var(--amarillo)]">Donde la pasión por la aviación se vive</h2>
@@ -134,9 +160,9 @@
   <section id="galeria" class="max-w-7xl mx-auto py-10 px-4">
     <h3 class="text-2xl font-bold mb-4 text-[var(--azul-claro)]">Galería Spotter</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión real" class="rounded shadow" />
-      <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Simulador" class="rounded shadow" />
-      <img src="https://i.imgur.com/wghVdlj.jpg" alt="Captura virtual" class="rounded shadow" />
+      <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión real" class="rounded shadow clickable" />
+      <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Simulador" class="rounded shadow clickable" />
+      <img src="https://i.imgur.com/wghVdlj.jpg" alt="Captura virtual" class="rounded shadow clickable" />
     </div>
   </section>
 
@@ -180,25 +206,26 @@
 
   <!-- Pie de página -->
   <footer class="bg-[var(--azul-oscuro)] p-4 text-center text-sm text-white/50 border-t border-[var(--azul-claro)] flex flex-col items-center gap-2">
-    <img src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="h-10 w-auto" />
+    <img src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="h-10 w-auto clickable" title="Haz clic para cambiar imagen" />
     <div>© 2025 Virtual Spotter | Desarrollado por LugoPilot Creations ✈</div>
   </footer>
 
   <script>
-    // Cambiar logo al hacer clic (solo logo del header)
-    const logo = document.getElementById('logo');
-    logo.addEventListener('click', () => {
-      const url = prompt('Ingrese la URL del nuevo logo:');
-      if (url) {
-        logo.src = url;
-        // Cambiar también en banner y footer para mantener coherencia
-        document.querySelector('section img[alt="Logo LugoPilot"]').src = url;
-        document.querySelector('footer img[alt="Logo LugoPilot"]').src = url;
-      }
-    });
+    // Función para agregar evento clic que permite cambiar la imagen por URL nueva
+    function hacerImagenEditable(img) {
+      img.addEventListener('click', (e) => {
+        e.preventDefault(); // para que no siga enlaces al hacer click en imágenes dentro de <a>
+        const urlNueva = prompt('Ingrese la URL de la nueva imagen:', img.src);
+        if (urlNueva && urlNueva.trim() !== '') {
+          img.src = urlNueva.trim();
+        }
+      });
+    }
+
+    // Seleccionamos todas las imágenes que tengan la clase "clickable"
+    document.querySelectorAll('img.clickable').forEach(hacerImagenEditable);
   </script>
 
 </body>
 </html>
-
 
