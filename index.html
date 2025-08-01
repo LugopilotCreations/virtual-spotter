@@ -1,57 +1,154 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Virtual Spotter | LugoPilot Creations</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" href="favicon.ico">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Definir colores personalizados */
+    :root {
+      --azul-claro: #0c91bf;
+      --rojo: #ed1c24;
+      --amarillo: #ffd400;
+      --azul-oscuro: #12323a;
+    }
+    body {
+      background-color: var(--azul-oscuro);
+      color: white;
+      font-family: sans-serif;
+    }
+    header {
+      background-color: var(--azul-oscuro);
+    }
+    a:hover {
+      color: var(--amarillo);
+    }
+    /* Scroll menú contenido */
+    .scrollable-menu {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="">
+
   <!-- Encabezado -->
-  <header class="bg-gray-800 p-4 shadow-md">
+  <header class="p-4 shadow-md border-b-4 border-var(--azul-claro)">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-400">✈ Virtual Spotter</h1>
-      <nav class="space-x-4">
-        <a href="#galeria" class="hover:text-blue-300">Galería</a>
-        <a href="#blog" class="hover:text-blue-300">Blog</a>
-        <a href="#comunidad" class="hover:text-blue-300">Comunidad</a>
-        <a href="#acerca" class="hover:text-blue-300">Sobre Nosotros</a>
+      <!-- Logo editable -->
+      <div>
+        <img id="logo" src="https://i.imgur.com/zSYDJqN.png" alt="Logo LugoPilot" class="h-12 w-auto cursor-pointer" title="Haz clic para cambiar logo" />
+      </div>
+
+      <!-- Menús dinámicos -->
+      <nav class="flex space-x-8 text-lg font-semibold">
+
+        <div class="relative group">
+          <button class="cursor-pointer" aria-haspopup="true" aria-expanded="false">
+            Aviación Real <span class="ml-1">▼</span>
+          </button>
+          <div
+            class="absolute hidden group-hover:block bg-var(--azul-oscuro) border border-var(--azul-claro) rounded shadow-lg mt-2 w-72 p-2 scrollable-menu z-10"
+            role="menu"
+            aria-label="Aviación Real"
+          >
+            <ul id="menu-real" class="space-y-2">
+              <!-- Aquí agregas hasta 50 items -->
+              <li>
+                <a href="https://i.imgur.com/GosDqjW.jpg" target="_blank" class="flex items-center space-x-3 hover:text-var(--amarillo)">
+                  <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión real" class="w-12 h-8 object-cover rounded" />
+                  <span>Avión real en pista</span>
+                </a>
+              </li>
+              <!-- Agrega más ítems similares -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="cursor-pointer" aria-haspopup="true" aria-expanded="false">
+            Simuladores <span class="ml-1">▼</span>
+          </button>
+          <div
+            class="absolute hidden group-hover:block bg-var(--azul-oscuro) border border-var(--azul-claro) rounded shadow-lg mt-2 w-72 p-2 scrollable-menu z-10"
+            role="menu"
+            aria-label="Simuladores"
+          >
+            <ul id="menu-simuladores" class="space-y-2">
+              <li>
+                <a href="https://i.imgur.com/XUvqYmU.jpg" target="_blank" class="flex items-center space-x-3 hover:text-var(--amarillo)">
+                  <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Simulador" class="w-12 h-8 object-cover rounded" />
+                  <span>Simulador de vuelo</span>
+                </a>
+              </li>
+              <!-- Agrega más ítems aquí -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="cursor-pointer" aria-haspopup="true" aria-expanded="false">
+            Comunidad <span class="ml-1">▼</span>
+          </button>
+          <div
+            class="absolute hidden group-hover:block bg-var(--azul-oscuro) border border-var(--azul-claro) rounded shadow-lg mt-2 w-72 p-2 scrollable-menu z-10"
+            role="menu"
+            aria-label="Comunidad"
+          >
+            <ul id="menu-comunidad" class="space-y-2">
+              <li>
+                <a href="https://i.imgur.com/wghVdlj.jpg" target="_blank" class="flex items-center space-x-3 hover:text-var(--amarillo)">
+                  <img src="https://i.imgur.com/wghVdlj.jpg" alt="Captura virtual" class="w-12 h-8 object-cover rounded" />
+                  <span>Captura virtual</span>
+                </a>
+              </li>
+              <!-- Agrega más ítems aquí -->
+            </ul>
+          </div>
+        </div>
+
       </nav>
     </div>
   </header>
 
   <!-- Banner principal -->
-  <section class="bg-cover bg-center h-64 flex items-center justify-center" style="background-image: url('https://i.imgur.com/qZ9HljW.jpg');">
-    <div class="bg-black bg-opacity-60 p-6 rounded">
-      <h2 class="text-3xl font-bold mb-2">Donde la pasión por la aviación se vive</h2>
-      <p class="text-lg">Spotting real y virtual en un solo lugar</p>
+  <section
+    class="bg-cover bg-center h-64 flex items-center justify-center"
+    style="background-image: url('https://i.imgur.com/qZ9HljW.jpg');"
+  >
+    <div class="bg-black bg-opacity-60 p-6 rounded text-center max-w-4xl">
+      <h2 class="text-3xl font-bold mb-2 text-var(--amarillo)">Donde la pasión por la aviación se vive</h2>
+      <p class="text-lg text-white/90">Spotting real y virtual en un solo lugar</p>
     </div>
   </section>
 
-  <!-- Galería -->
+  <!-- Contenido principal (ejemplo solo galería) -->
   <section id="galeria" class="max-w-7xl mx-auto py-10 px-4">
-    <h3 class="text-2xl font-bold mb-4 text-blue-400">Galería Spotter</h3>
+    <h3 class="text-2xl font-bold mb-4 text-var(--azul-claro)">Galería Spotter</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión real" class="rounded shadow">
-      <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Simulador" class="rounded shadow">
-      <img src="https://i.imgur.com/wghVdlj.jpg" alt="Captura virtual" class="rounded shadow">
+      <img src="https://i.imgur.com/GosDqjW.jpg" alt="Avión real" class="rounded shadow" />
+      <img src="https://i.imgur.com/XUvqYmU.jpg" alt="Simulador" class="rounded shadow" />
+      <img src="https://i.imgur.com/wghVdlj.jpg" alt="Captura virtual" class="rounded shadow" />
     </div>
   </section>
 
   <!-- Blog -->
-  <section id="blog" class="bg-gray-800 py-10 px-4">
+  <section id="blog" class="bg-var(--azul-oscuro) py-10 px-4">
     <div class="max-w-7xl mx-auto">
-      <h3 class="text-2xl font-bold mb-4 text-blue-400">Blog de Aviación</h3>
+      <h3 class="text-2xl font-bold mb-4 text-var(--azul-claro)">Blog de Aviación</h3>
       <div class="space-y-4">
-        <article class="bg-gray-700 p-4 rounded shadow">
+        <article class="bg-[#0c91bf]/20 p-4 rounded shadow">
           <h4 class="text-xl font-semibold">¿Cómo iniciarte en el spotting real?</h4>
-          <p class="text-sm text-gray-300">Consejos para empezar a fotografiar aviones y conocer comunidades locales...</p>
+          <p class="text-white/80">Consejos para empezar a fotografiar aviones y conocer comunidades locales...</p>
         </article>
-        <article class="bg-gray-700 p-4 rounded shadow">
+        <article class="bg-[#ed1c24]/20 p-4 rounded shadow">
           <h4 class="text-xl font-semibold">Top 5 simuladores para PC</h4>
-          <p class="text-sm text-gray-300">Una comparativa entre MSFS2020, X-Plane, P3D y más.</p>
+          <p class="text-white/80">Una comparativa entre MSFS2020, X-Plane, P3D y más.</p>
         </article>
       </div>
     </div>
@@ -59,22 +156,40 @@
 
   <!-- Comunidad -->
   <section id="comunidad" class="max-w-7xl mx-auto py-10 px-4">
-    <h3 class="text-2xl font-bold mb-4 text-blue-400">Comunidad Virtual Spotter</h3>
-    <p class="text-gray-300">Únete a nuestros foros, participa en concursos mensuales y forma parte de una red de entusiastas de la aviación en toda Latinoamérica.</p>
+    <h3 class="text-2xl font-bold mb-4 text-var(--azul-claro)">Comunidad Virtual Spotter</h3>
+    <p class="text-white/70">
+      Únete a nuestros foros, participa en concursos mensuales y forma parte de una red de entusiastas de la aviación en toda Latinoamérica.
+    </p>
   </section>
 
   <!-- Acerca de -->
-  <section id="acerca" class="bg-gray-800 py-10 px-4">
+  <section id="acerca" class="bg-var(--azul-oscuro) py-10 px-4">
     <div class="max-w-7xl mx-auto">
-      <h3 class="text-2xl font-bold mb-4 text-blue-400">Sobre Nosotros</h3>
-      <p class="text-gray-300 mb-2">Virtual Spotter nace de la pasión por la aviación real y virtual. Nuestra misión es ofrecer un espacio donde todos los amantes del cielo puedan compartir y aprender juntos.</p>
-      <p class="text-gray-400 italic">Creado con orgullo por <strong>LugoPilot Creations</strong>.</p>
+      <h3 class="text-2xl font-bold mb-4 text-var(--azul-claro)">Sobre Nosotros</h3>
+      <p class="text-white/70 mb-2">
+        Virtual Spotter nace de la pasión por la aviación real y virtual. Nuestra misión es ofrecer un espacio donde todos los amantes del cielo puedan compartir y aprender juntos.
+      </p>
+      <p class="italic text-white/50">
+        Creado con orgullo por <strong>LugoPilot Creations</strong>.
+      </p>
     </div>
   </section>
 
   <!-- Pie de página -->
-  <footer class="bg-gray-900 p-4 text-center text-sm text-gray-500">
+  <footer class="bg-var(--azul-oscuro) p-4 text-center text-sm text-white/50 border-t border-var(--azul-claro)">
     © 2025 Virtual Spotter | Desarrollado por LugoPilot Creations ✈
   </footer>
+
+  <script>
+    // Cambiar logo al hacer clic (ejemplo simple)
+    const logo = document.getElementById('logo');
+    logo.addEventListener('click', () => {
+      const url = prompt('Ingrese la URL del nuevo logo:');
+      if (url) {
+        logo.src = url;
+      }
+    });
+  </script>
 </body>
 </html>
+
