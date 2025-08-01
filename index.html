@@ -32,7 +32,7 @@
     }
   </style>
 </head>
-<body>
+<body class="bg-[var(--azul-oscuro)] text-white font-sans">
 
   <!-- Encabezado -->
   <header class="p-4 shadow-md border-b-4 border-[var(--azul-claro)]">
@@ -118,9 +118,12 @@
 
   <!-- Banner principal -->
   <section
-    class="bg-cover bg-center h-64 flex items-center justify-center"
+    class="bg-cover bg-center h-64 flex items-center justify-center relative"
     style="background-image: url('https://i.imgur.com/qZ9HljW.jpg');"
   >
+    <!-- Logo en esquina superior izquierda -->
+    <img src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="absolute top-4 left-4 h-16 w-auto" />
+
     <div class="bg-black bg-opacity-60 p-6 rounded text-center max-w-4xl">
       <h2 class="text-3xl font-bold mb-2 text-[var(--amarillo)]">Donde la pasión por la aviación se vive</h2>
       <p class="text-lg text-white/90">Spotting real y virtual en un solo lugar</p>
@@ -176,21 +179,26 @@
   </section>
 
   <!-- Pie de página -->
-  <footer class="bg-[var(--azul-oscuro)] p-4 text-center text-sm text-white/50 border-t border-[var(--azul-claro)]">
-    © 2025 Virtual Spotter | Desarrollado por LugoPilot Creations ✈
+  <footer class="bg-[var(--azul-oscuro)] p-4 text-center text-sm text-white/50 border-t border-[var(--azul-claro)] flex flex-col items-center gap-2">
+    <img src="http://imgfz.com/i/jdTMpeQ.png" alt="Logo LugoPilot" class="h-10 w-auto" />
+    <div>© 2025 Virtual Spotter | Desarrollado por LugoPilot Creations ✈</div>
   </footer>
 
   <script>
-    // Cambiar logo al hacer clic
+    // Cambiar logo al hacer clic (solo logo del header)
     const logo = document.getElementById('logo');
     logo.addEventListener('click', () => {
       const url = prompt('Ingrese la URL del nuevo logo:');
       if (url) {
         logo.src = url;
+        // Cambiar también en banner y footer para mantener coherencia
+        document.querySelector('section img[alt="Logo LugoPilot"]').src = url;
+        document.querySelector('footer img[alt="Logo LugoPilot"]').src = url;
       }
     });
   </script>
 
 </body>
 </html>
+
 
